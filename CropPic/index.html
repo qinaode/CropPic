@@ -1,0 +1,59 @@
+﻿<!DOCTYPE">
+<html>
+<head>
+    <title></title>
+    <script src="Script/croppic/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <link href="Script/croppic/croppic.css" rel="stylesheet" type="text/css" />
+    <script src="Script/croppic/croppic.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        body
+        {
+            background: gray;
+        }
+        .main
+        {
+            width:800px;
+            margin:0 auto;
+        }
+        #croppic
+        {
+            width: 200px;
+            height: 150px;
+            position: relative; /* or fixed or absolute */
+        }
+        #btn_upload
+        {
+            margin-left:70px;
+            padding:5px 8px;
+            border:solid 1px #ccc;
+            border-radius:5px;
+            cursor:pointer;
+            color:#fff;
+            background:#2CE987;
+        }
+        #btn_upload:hover
+        {
+             background:#1CD139;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var croppicHeaderOptions = {
+                uploadUrl: 'ashx/upload.ashx',
+                cropUrl: 'ashx/crop.ashx',
+                customUploadButtonId: 'btn_upload',
+                modal: false
+            }
+            var croppic = new Croppic('croppic', croppicHeaderOptions);
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div id="croppic"></div>
+        <span class="btn" id="btn_upload">上传</span>
+    </div>
+    
+</body>
+</html>
